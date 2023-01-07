@@ -7,18 +7,15 @@ plugins {
 group = "ru.otus.otuskotlin.marketplace"
 version = "1.0-SNAPSHOT"
 
-repositories {
-    mavenCentral()
-}
+subprojects {
+    group = rootProject.group
+    version = rootProject.version
 
-dependencies {
-    testImplementation(kotlin("test"))
-}
+    repositories {
+        mavenCentral()
+    }
 
-tasks.test {
-    useJUnitPlatform()
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    tasks.withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = "11"
+    }
 }
