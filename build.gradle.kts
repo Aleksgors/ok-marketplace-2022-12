@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "ru.otus.otuskotlin.marketplace"
-version = "1.0-SNAPSHOT"
+version = project.property("project.version").toString()
 
 subprojects {
     group = rootProject.group
@@ -16,6 +16,6 @@ subprojects {
     }
 
     tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "11"
+        kotlinOptions.jvmTarget = project.property("jvm.version").toString()
     }
 }
