@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.21"
+    kotlin("jvm")
 }
 
 group = "ru.otus.otuskotlin.marketplace"
-version = project.property("project.version").toString()
+version = "0.0.1-SNAPSHOT"
 
 subprojects {
     group = rootProject.group
@@ -16,6 +16,6 @@ subprojects {
     }
 
     tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = project.property("jvm.version").toString()
+        kotlinOptions.jvmTarget = "11"
     }
 }

@@ -1,3 +1,11 @@
-rootProject.name = "ok-marketplace-2022-12"
+rootProject.name = "ok-marketplace-202212"
 
-include("m1l1-quickstart")
+pluginManagement {
+    val kotlinVersion: String by settings
+
+    plugins {
+        kotlin("jvm") version kotlinVersion
+    }
+}
+
+include("m1l1-quickstart", "m1l4-dsl", "m1l5-coroutines")
